@@ -3,13 +3,16 @@ package app.service;
 import app.dao.UserDao;
 import app.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-public class UserServiceImp implements UserService {
+public class UserServiceImp implements UserService, UserDetailsService {
 
     @Autowired
     private UserDao userDao;
@@ -38,5 +41,10 @@ public class UserServiceImp implements UserService {
     @Override
     public List<User> getUsersList() {
         return userDao.getUsersList();
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        return userDao.getUserByUsername(s);
     }
 }

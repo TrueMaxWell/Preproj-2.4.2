@@ -18,16 +18,16 @@
             th:object="${user}" method="POST">
     <table border="1">
         <tr>
-            <th>Name</th>
-            <th>LastName</th>
+            <th>Username</th>
+            <th>Password</th>
             <th>Submit</th>
         </tr>
         <tr>
             <td><label>
-                <input type="text" th:field="*{firstName}" size="50" />
+                <input type="text" th:field="*{username}" size="50" />
             </label></td>
             <td><label>
-                <input type="text" th:field="*{lastName}" size="50" />
+                <input type="text" th:field="*{password}" size="50" />
             </label></td>
             <td><input type="submit" th:value="${create} ? 'Create' : 'Edit'" /></td>
         </tr>

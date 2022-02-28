@@ -18,15 +18,15 @@
   <table border="1">
     <tr>
       <th>Id</th>
-      <th>Name</th>
-      <th>LastName</th>
+      <th>Username</th>
+      <th>Password</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
     <tr th:each ="user : ${users}">
       <td th:utext="${user.id}">...</td>
-      <td th:utext="${user.firstName}">...</td>
-      <td th:utext="${user.lastName}">...</td>
+      <td th:utext="${user.username}">...</td>
+      <td th:utext="${user.password}">...</td>
       <td><a th:href="@{/users/{userId}/edit(userId=${user.id})}">Edit</a></td>
       <td><a th:href="@{/users/{userId}/delete(userId=${user.id})}">Delete</a></td>
     </tr>

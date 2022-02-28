@@ -12,4 +12,5 @@ public interface UserDao {
     void changeUser(User user);
     User getUser(Long id);
     List<User> getUsersList();
+    User getUserByUsername (String username);
 }
